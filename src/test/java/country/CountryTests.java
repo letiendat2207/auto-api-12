@@ -8,10 +8,13 @@ import io.restassured.common.mapper.TypeRef;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Stream;
 
 import static country.CountriesData.ALL_COUNTRIES_DATA;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
@@ -54,5 +57,40 @@ public class CountryTests {
         assertThat(actual.size(), equalTo(expected.size()));
         assertThat(actual.containsAll(expected), equalTo(true));
         assertThat(expected.containsAll(actual), equalTo(true));
+    }
+
+    @Test
+    void verifySchemaOfGetCountryApi(){
+        RestAssured.given().log().all()
+                .get("/api/v1/countries/VN")
+                .then()
+                .log().all()
+                .statusCode(200)
+                .assertThat()
+                .body(matchesJsonSchemaInClasspath("json-schema/country-schema.json"));
+    }
+
+    static Stream<Map<String, String>> countryProvider() throws JsonProcessingException{
+        ObjectMapper mapper = new ObjectMapper();
+        List<Map<String, String>> inputData = mapper.readValue(CountriesData.ALL_COUNTRIES_DATA, new TypeReference<List<Map<String, String>>>() {});
+        return inputData.stream();
+    }
+
+    @ParameterizedTest
+    @MethodSource("countryProvider")
+    void verifyGetCountry(Map<String, String> input) throws JsonProcessingException {
+
+            Response response = RestAssured.given().log().all()
+                    .get(String.format("/api/v1/countries/{code}"), input.get("code"));
+            // 1. Verify status code
+            response.then().log().all().statusCode(200);
+
+            // 2. Verify headers
+            response.then().header("X-Powered-By", equalTo("Express"))
+                    .header("Content-Type", equalTo("application/json; charset=utf-8"));
+
+            // 3. Verify body
+            Map<String, String> actual = response.body().as(new TypeRef<Map<String, String>>() {});
+            assertThat(actual, equalToObject(input));
     }
 }
