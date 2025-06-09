@@ -16,25 +16,27 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Stream;
 
-import static country.CountriesData.ALL_COUNTRIES_DATA;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 
 public class CountryTests {
     private static final String GET_COUNTRIES_API = "/api/v1/countries";
-    private static final String GET_COUNTRY_PAGINATION_API = "/api/v4/countries";
     private static final String GET_COUNTRY_API = "/api/v1/countries/{code}";
+    private static final String GET_COUNTRY_WITH_FILTER_API = "/api/v3/countries";
+    private static final String GET_COUNTRY_WITH_PAGINATION_API = "/api/v4/countries";
+    private static final String GET_COUNTRY_WITH_HEADER_API = "/api/v5/countries";
+
     private static final String X_POWERED_BY_HEADER = "X-Powered-By";
     private static final String X_POWERED_BY_HEADER_VALUE = "Express";
-    private static final String CONTENT_TYPE_HEDAER = "Content-Type";
-    private static final String CONTENT_TYPE_HEDAER_VALUE = "application/json; charset=utf-8";
-    private static final String GET_COUNTRY_WITH_FILTER_API = "/api/v3/countries";
+    private static final String CONTENT_TYPE_HEADER = "Content-Type";
+    private static final String CONTENT_TYPE_HEADER_VALUE = "application/json; charset=utf-8";
+    private static final String API_KEY_HEADER = "api-key";
+    private static final String API_KEY_HEADER_VALUE = "private";
+
     private static final String GDP_FILTER = "gdp";
     private static final String OPERATOR_FILTER = "operator";
     private static final String PAGE = "page";
@@ -66,7 +68,7 @@ public class CountryTests {
 
         // 2. Verify headers
         response.then().header(X_POWERED_BY_HEADER, equalTo(X_POWERED_BY_HEADER_VALUE))
-                .header(CONTENT_TYPE_HEDAER, equalTo(CONTENT_TYPE_HEDAER_VALUE));
+                .header(CONTENT_TYPE_HEADER, equalTo(CONTENT_TYPE_HEADER_VALUE));
 
         // 3. Verify body
         ObjectMapper mapper = new ObjectMapper();
@@ -108,7 +110,7 @@ public class CountryTests {
 
         // 2. Verify headers
         response.then().header(X_POWERED_BY_HEADER, equalTo(X_POWERED_BY_HEADER_VALUE))
-                .header(CONTENT_TYPE_HEDAER, equalTo(CONTENT_TYPE_HEDAER_VALUE));
+                .header(CONTENT_TYPE_HEADER, equalTo(CONTENT_TYPE_HEADER_VALUE));
 
         // 3. Verify body
         Country actual = response.body().as(Country.class);
@@ -140,7 +142,7 @@ public class CountryTests {
 
         // 2. Verify headers
         response.then().header(X_POWERED_BY_HEADER, equalTo(X_POWERED_BY_HEADER_VALUE))
-                .header(CONTENT_TYPE_HEDAER, equalTo(CONTENT_TYPE_HEDAER_VALUE));
+                .header(CONTENT_TYPE_HEADER, equalTo(CONTENT_TYPE_HEADER_VALUE));
 
         // 3. Verify body
         List<Country> actual = response.body().as(new TypeRef<>() {
@@ -174,7 +176,7 @@ public class CountryTests {
 
         // 2. Verify headers
         response.then().header(X_POWERED_BY_HEADER, equalTo(X_POWERED_BY_HEADER_VALUE))
-                .header(CONTENT_TYPE_HEDAER, equalTo(CONTENT_TYPE_HEDAER_VALUE));
+                .header(CONTENT_TYPE_HEADER, equalTo(CONTENT_TYPE_HEADER_VALUE));
 
         // 3. Verify body
         List<Country> actual = response.body().as(new TypeRef<>() {
@@ -190,7 +192,7 @@ public class CountryTests {
         RestAssured.given().log().all()
                 .queryParam(PAGE, 1)
                 .queryParam(SIZE, 4)
-                .get(GET_COUNTRY_PAGINATION_API)
+                .get(GET_COUNTRY_WITH_PAGINATION_API)
                 .then()
                 .log().all()
                 .statusCode(200)
@@ -208,7 +210,7 @@ public class CountryTests {
 
         // 2. Verify headers
         response.then().header(X_POWERED_BY_HEADER, equalTo(X_POWERED_BY_HEADER_VALUE))
-                .header(CONTENT_TYPE_HEDAER, equalTo(CONTENT_TYPE_HEDAER_VALUE));
+                .header(CONTENT_TYPE_HEADER, equalTo(CONTENT_TYPE_HEADER_VALUE));
 
         // 3. Verify body
         CountryPagination actualDataFirstPage = response.body().as(CountryPagination.class);
@@ -250,78 +252,20 @@ public class CountryTests {
         Response response = RestAssured.given().log().all()
                 .queryParam(PAGE, page)
                 .queryParam(SIZE, testSize)
-                .get(GET_COUNTRY_PAGINATION_API);
+                .get(GET_COUNTRY_WITH_PAGINATION_API);
         return response;
     }
 
-    /*
     @Test
-    void verifyGetCountryApiWithFilterLessThan() {
-        Response response = RestAssured.given().log().all()
-                .queryParam(GDP_FILTER, 5000)
-                .queryParam( OPERATOR_FILTER, "<")
-                .get(GET_COUNTRY_WITH_FILTER_API);
-
-        // 1. Verify status code
-        response.then().log().all().statusCode(200);
-
-        // 2. Verify headers
-        response.then().header(X_POWERED_BY_HEADER, equalTo(X_POWERED_BY_HEADER_VALUE))
-                .header(CONTENT_TYPE_HEDAER, equalTo(CONTENT_TYPE_HEDAER_VALUE));
-
-        // 3. Verify body
-        List<Country> actual = response.body().as(new TypeRef<>() {
-        });
-
-        for (Country country : actual){
-            assertThat(country.getGdp(), lessThan(5000f));
-        }
+    void verifySchemaOfGetCountryApiWithHeaders() {
+        RestAssured.given().log().all()
+                .header(API_KEY_HEADER, API_KEY_HEADER_VALUE)
+                .get(GET_COUNTRY_WITH_HEADER_API)
+                .then()
+                .log().all()
+                .statusCode(200)
+                .assertThat()
+                .body(matchesJsonSchemaInClasspath("json-schema/country-header-schema.json"));
     }
 
-    @Test
-    void verifyGetCountryApiWithFilterLessThanOrEqual() {
-        Response response = RestAssured.given().log().all()
-                .queryParam(GDP_FILTER, 5000)
-                .queryParam( OPERATOR_FILTER, "<=")
-                .get(GET_COUNTRY_WITH_FILTER_API);
-
-        // 1. Verify status code
-        response.then().log().all().statusCode(200);
-
-        // 2. Verify headers
-        response.then().header(X_POWERED_BY_HEADER, equalTo(X_POWERED_BY_HEADER_VALUE))
-                .header(CONTENT_TYPE_HEDAER, equalTo(CONTENT_TYPE_HEDAER_VALUE));
-
-        // 3. Verify body
-        List<Country> actual = response.body().as(new TypeRef<>() {
-        });
-
-        for (Country country : actual){
-            assertThat(country.getGdp(), lessThanOrEqualTo(5000f));
-        }
-    }
-
-    @Test
-    void verifyGetCountryApiWithFilterEqual() {
-        Response response = RestAssured.given().log().all()
-                .queryParam(GDP_FILTER, 5000)
-                .queryParam( OPERATOR_FILTER, "==")
-                .get(GET_COUNTRY_WITH_FILTER_API);
-
-        // 1. Verify status code
-        response.then().log().all().statusCode(200);
-
-        // 2. Verify headers
-        response.then().header(X_POWERED_BY_HEADER, equalTo(X_POWERED_BY_HEADER_VALUE))
-                .header(CONTENT_TYPE_HEDAER, equalTo(CONTENT_TYPE_HEDAER_VALUE));
-
-        // 3. Verify body
-        List<Country> actual = response.body().as(new TypeRef<>() {
-        });
-
-        for (Country country : actual){
-            assertThat(country.getGdp(), equalTo(5000f));
-        }
-    }
- */
 }
