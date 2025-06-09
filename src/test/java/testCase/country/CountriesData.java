@@ -1,4 +1,4 @@
-package country;
+package testCase.country;
 
 public class CountriesData {
     public static final String ALL_COUNTRIES_DATA = """

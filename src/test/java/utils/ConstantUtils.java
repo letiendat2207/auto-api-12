@@ -16,7 +16,7 @@ public class ConstantUtils {
     public static final String GET_COUNTRY_WITH_HEADER_API = "/api/v5/countries";
     public static final String CONTENT_TYPE_HEADER_VALUE = "application/json; charset=utf-8";
     public static final String API_KEY_HEADER = "api-key";
-    public static final String API_KEY_HEADER_VALUE = "public";
+    public static final String API_KEY_HEADER_VALUE = "private";
     public static final String GDP_FILTER = "gdp";
     public static final String OPERATOR_FILTER = "operator";
     public static final String PAGE = "page";

@@ -1,22 +1,16 @@
-package login;
+package testCase.login;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import country.CountriesData;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
-import model.country.Country;
 import model.login.LoginError;
 import model.login.LoginRequest;
 import model.login.LoginResponse;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
+import testCase.TestMaster;
 
-import java.util.List;
 import java.util.stream.Stream;
 
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
@@ -24,14 +18,8 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 import static utils.ConstantUtils.*;
 
-public class LoginTest {
+public class LoginTest extends TestMaster {
 
-
-    @BeforeAll
-    static void setup() {
-        RestAssured.baseURI = HOST;
-        RestAssured.port = PORT;
-    }
 
     @Test
     void verifySchemaOfLoginApi() {

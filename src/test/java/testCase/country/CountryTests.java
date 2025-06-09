@@ -1,4 +1,4 @@
-package country;
+package testCase.country;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -14,6 +14,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
+import testCase.TestMaster;
 
 import java.util.List;
 import java.util.stream.Stream;
@@ -23,14 +24,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 import static utils.ConstantUtils.*;
 
-public class CountryTests {
-
-
-    @BeforeAll
-    static void setup() {
-        RestAssured.baseURI = HOST;
-        RestAssured.port = PORT;
-    }
+public class CountryTests extends TestMaster {
 
     @Test
     void verifySchemaOfGetCountriesApi() {
