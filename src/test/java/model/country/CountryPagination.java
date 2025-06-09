@@ -1,4 +1,4 @@
-package model;
+package model.country;
 
 import java.util.List;
 import java.util.Objects;
@@ -18,7 +18,10 @@ public class CountryPagination {
 
     private List<Country> data;
 
-    CountryPagination(){};
+    CountryPagination() {
+    }
+
+    ;
 
     @Override
     public boolean equals(Object o) {

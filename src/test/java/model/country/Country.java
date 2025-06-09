@@ -1,4 +1,4 @@
-package model;
+package model.country;
 
 import java.util.Objects;
 
@@ -7,7 +7,7 @@ public class Country {
     private String code;
     private float gdp;
 
-    public  Country(){
+    public Country() {
 
     }
 
