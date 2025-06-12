@@ -14,6 +14,8 @@ public class ConstantUtils {
     public static final String GET_COUNTRY_WITH_FILTER_API = "/api/v3/countries";
     public static final String GET_COUNTRY_WITH_PAGINATION_API = "/api/v4/countries";
     public static final String GET_COUNTRY_WITH_HEADER_API = "/api/v5/countries";
+    public static final String CREATE_USER_API = "/api/user";
+    public static final String GET_USER_API = "/api/user/{userId}";
     public static final String CONTENT_TYPE_HEADER_VALUE = "application/json; charset=utf-8";
     public static final String API_KEY_HEADER = "api-key";
     public static final String API_KEY_HEADER_VALUE = "private";
@@ -21,4 +23,5 @@ public class ConstantUtils {
     public static final String OPERATOR_FILTER = "operator";
     public static final String PAGE = "page";
     public static final String SIZE = "size";
+    public static final String AUTHORIZATION_HEADER = "Authorization";
 }
