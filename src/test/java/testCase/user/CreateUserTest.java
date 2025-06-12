@@ -22,36 +22,23 @@ import static utils.DateTimeUtils.parseTimeToCurrentTimeZone;
 import static utils.DateTimeUtils.verifyDateTime;
 
 public class CreateUserTest extends TestMaster {
+    private static final String[] IGNORE_FIELDS = {"id", "createdAt", "updatedAt", "addresses[*].id",
+            "addresses[*].customerId", "addresses[*].createdAt", "addresses[*].updatedAt"};
+    private static final String EMAIL_TEMPlATE = "auto_api_%s@abc.com";
+
     @Test
     void verifyCreateUserSuccessful() {
         // Create User Address
-        UserAddressRequest userAddressRequest = new UserAddressRequest();
-        userAddressRequest.setStreetNumber("123");
-        userAddressRequest.setStreet("Main St");
-        userAddressRequest.setWard("Ward 1");
-        userAddressRequest.setDistrict("District 1");
-        userAddressRequest.setCity("Thu Duc");
-        userAddressRequest.setState("Ho Chi Minh");
-        userAddressRequest.setZip("70000");
-        userAddressRequest.setCountry("VN");
+        UserAddressRequest userAddressRequest = UserAddressRequest.getDefault();
 
         // Create user
-        UserRequest userRequest = new UserRequest();
-        userRequest.setFirstName("Jos");
-        userRequest.setLastName("Doe");
-        userRequest.setMiddleName("Smith");
-        userRequest.setBirthday("01-23-2000");
-        userRequest.setEmail(String.format("auto_api_%s@abc.com", System.currentTimeMillis()));
-        userRequest.setPhone("01234567890");
+        UserRequest userRequest = UserRequest.getDefault();
+        userRequest.setEmail(String.format(EMAIL_TEMPlATE, System.currentTimeMillis()));
         userRequest.setAddresses(List.of(userAddressRequest));
 
         LocalDateTime timeBeforeCreate = LocalDateTime.now();
 
-        Response createUserResponse = RestAssured.given().log().all()
-                .header(CONTENT_TYPE_HEADER, REQUEST_CONTENT_TYPE_HEADER_VALUE)
-                .header(AUTHORIZATION_HEADER, String.format("Bearer %s", token))
-                .body(userRequest)
-                .post(CREATE_USER_API);
+        Response createUserResponse = createUser(userRequest);
 
         // 1. Verify status code
         createUserResponse.then().log().all().statusCode(200);
@@ -68,7 +55,7 @@ public class CreateUserTest extends TestMaster {
         // 4. Double check that user existing in the system or not by getUserApi
         Response getUserResponse = RestAssured.given().log().all()
                 .header(CONTENT_TYPE_HEADER, REQUEST_CONTENT_TYPE_HEADER_VALUE)
-                .header(AUTHORIZATION_HEADER, String.format("Bearer %s", token))
+                .header(AUTHORIZATION_HEADER, token)
                 .get(GET_USER_API, userResponse.getId());
 
         LocalDateTime timeAfterCreate = LocalDateTime.now();
@@ -79,8 +66,7 @@ public class CreateUserTest extends TestMaster {
         GetUserResponse actualGetUserResponse = getUserResponse.body().as(GetUserResponse.class);
         assertThat(actualGetUserResponse.getId(), equalTo(userResponse.getId()));
         assertThat(actualGetUserResponse, jsonEquals(userRequest).whenIgnoringPaths(
-                "id", "createdAt", "updatedAt", "addresses[*].id",
-                "addresses[*].customerId", "addresses[*].createdAt", "addresses[*].updatedAt"));
+                IGNORE_FIELDS));
 
         LocalDateTime userCreateAtDate = parseTimeToCurrentTimeZone(actualGetUserResponse.getCreatedAt());
         verifyDateTime(timeBeforeCreate, timeAfterCreate, userCreateAtDate);
@@ -105,33 +91,18 @@ public class CreateUserTest extends TestMaster {
     void verifyCreateUserSuccessfulWithMultipleAddress() {
 
         // Create User Address
-        UserAddressRequest userAddressRequest = new UserAddressRequest();
-        userAddressRequest.setStreetNumber("123");
-        userAddressRequest.setStreet("Main St");
-        userAddressRequest.setWard("Ward 1");
-        userAddressRequest.setDistrict("District 1");
-        userAddressRequest.setCity("Thu Duc");
-        userAddressRequest.setState("Ho Chi Minh");
-        userAddressRequest.setZip("70000");
-        userAddressRequest.setCountry("VN");
+        UserAddressRequest userAddressRequest1 = UserAddressRequest.getDefault();
+        UserAddressRequest userAddressRequest2 = UserAddressRequest.getDefault();
+        userAddressRequest2.setStreetNumber("456");
 
         // Create user
-        UserRequest userRequest = new UserRequest();
-        userRequest.setFirstName("Jos");
-        userRequest.setLastName("Doe");
-        userRequest.setMiddleName("Smith");
-        userRequest.setBirthday("01-23-2000");
-        userRequest.setEmail(String.format("auto_api_%s@abc.com", System.currentTimeMillis()));
-        userRequest.setPhone("01234567890");
-        userRequest.setAddresses(List.of(userAddressRequest));
+        UserRequest userRequest = UserRequest.getDefault();
+        userRequest.setEmail(String.format(EMAIL_TEMPlATE, System.currentTimeMillis()));
+        userRequest.setAddresses(List.of(userAddressRequest1, userAddressRequest2));
 
         LocalDateTime timeBeforeCreate = LocalDateTime.now();
 
-        Response createUserResponse = RestAssured.given().log().all()
-                .header(CONTENT_TYPE_HEADER, REQUEST_CONTENT_TYPE_HEADER_VALUE)
-                .header(AUTHORIZATION_HEADER, String.format("Bearer %s", token))
-                .body(userRequest)
-                .post(CREATE_USER_API);
+        Response createUserResponse = createUser(userRequest);
 
         // 1. Verify status code
         createUserResponse.then().log().all().statusCode(200);
@@ -148,7 +119,7 @@ public class CreateUserTest extends TestMaster {
         // 4. Double check that user existing in the system or not by getUserApi
         Response getUserResponse = RestAssured.given().log().all()
                 .header(CONTENT_TYPE_HEADER, REQUEST_CONTENT_TYPE_HEADER_VALUE)
-                .header(AUTHORIZATION_HEADER, String.format("Bearer %s", token))
+                .header(AUTHORIZATION_HEADER, token)
                 .get(GET_USER_API, userResponse.getId());
 
         LocalDateTime timeAfterCreate = LocalDateTime.now();
@@ -159,8 +130,7 @@ public class CreateUserTest extends TestMaster {
         GetUserResponse actualGetUserResponse = getUserResponse.body().as(GetUserResponse.class);
         assertThat(actualGetUserResponse.getId(), equalTo(userResponse.getId()));
         assertThat(actualGetUserResponse, jsonEquals(userRequest).whenIgnoringPaths(
-                "id", "createdAt", "updatedAt", "addresses[*].id",
-                "addresses[*].customerId", "addresses[*].createdAt", "addresses[*].updatedAt"));
+                IGNORE_FIELDS));
 
         LocalDateTime userCreateAtDate = parseTimeToCurrentTimeZone(actualGetUserResponse.getCreatedAt());
         verifyDateTime(timeBeforeCreate, timeAfterCreate, userCreateAtDate);
@@ -178,5 +148,13 @@ public class CreateUserTest extends TestMaster {
             LocalDateTime userAddressUpdateAtDate = parseTimeToCurrentTimeZone(actualGetUserResponse.getUpdatedAt());
             verifyDateTime(timeBeforeCreate, timeAfterCreate, userUpdateAtDate);
         }
+    }
+
+    private static Response createUser(UserRequest userRequest) {
+        return RestAssured.given().log().all()
+                .header(CONTENT_TYPE_HEADER, REQUEST_CONTENT_TYPE_HEADER_VALUE)
+                .header(AUTHORIZATION_HEADER, token)
+                .body(userRequest)
+                .post(CREATE_USER_API);
     }
 }
