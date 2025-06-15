@@ -5,12 +5,15 @@ import io.restassured.response.Response;
 import model.login.LoginRequest;
 import model.login.LoginResponse;
 import model.user.*;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import testCase.TestMaster;
 
 import java.time.LocalDateTime;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.TimeZone;
 
@@ -25,6 +28,20 @@ public class CreateUserTest extends TestMaster {
     private static final String[] IGNORE_FIELDS = {"id", "createdAt", "updatedAt", "addresses[*].id",
             "addresses[*].customerId", "addresses[*].createdAt", "addresses[*].updatedAt"};
     private static final String EMAIL_TEMPlATE = "auto_api_%s@abc.com";
+    private static List<String> ids = new ArrayList<>();
+
+    @AfterAll
+    static void tearDown(){
+        for(String id : ids){
+            RestAssured.given().log().all()
+                    .header(CONTENT_TYPE_HEADER, REQUEST_CONTENT_TYPE_HEADER_VALUE)
+                    .header(AUTHORIZATION_HEADER, token)
+                    .delete(DELETE_USER_API, id)
+                    .then()
+                    .log()
+                    .all();
+        }
+    }
 
     @Test
     void verifyCreateUserSuccessful() {
@@ -57,6 +74,7 @@ public class CreateUserTest extends TestMaster {
                 .header(CONTENT_TYPE_HEADER, REQUEST_CONTENT_TYPE_HEADER_VALUE)
                 .header(AUTHORIZATION_HEADER, token)
                 .get(GET_USER_API, userResponse.getId());
+        ids.add(userResponse.getId());
 
         LocalDateTime timeAfterCreate = LocalDateTime.now();
         // 5. Verify status
@@ -121,6 +139,8 @@ public class CreateUserTest extends TestMaster {
                 .header(CONTENT_TYPE_HEADER, REQUEST_CONTENT_TYPE_HEADER_VALUE)
                 .header(AUTHORIZATION_HEADER, token)
                 .get(GET_USER_API, userResponse.getId());
+
+        ids.add(userResponse.getId());
 
         LocalDateTime timeAfterCreate = LocalDateTime.now();
         // 5. Verify status
