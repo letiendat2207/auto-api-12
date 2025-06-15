@@ -19,6 +19,25 @@ dependencies {
     testAnnotationProcessor("org.projectlombok:lombok:1.18.38")
     testImplementation("net.javacrumbs.json-unit:json-unit:4.1.1")
     testImplementation("com.fasterxml.jackson.core:jackson-core:2.19.0")
+
+    // the GOAT ORM
+    testImplementation 'org.hibernate.orm:hibernate-core:7.0.2.Final'
+
+    // Hibernate Processor
+    testImplementation 'org.hibernate.orm:hibernate-processor:7.0.2.Final'
+
+    // Hibernate Validator
+    testImplementation 'org.hibernate.validator:hibernate-validator:8.0.1.Final'
+    testImplementation 'org.glassfish:jakarta.el:4.0.2'
+
+    // Agroal connection pool
+    runtimeOnly 'org.hibernate.orm:hibernate-agroal:7.0.2.Final'
+    runtimeOnly 'io.agroal:agroal-pool:2.5'
+
+    // logging via Log4j
+    runtimeOnly 'org.apache.logging.log4j:log4j-core:2.24.1'
+
+    implementation("org.postgresql:postgresql:42.7.7")
 }
 
 test {

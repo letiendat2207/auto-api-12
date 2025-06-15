@@ -2,8 +2,8 @@ package testCase;
 
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
-import model.login.LoginRequest;
-import model.login.LoginResponse;
+import model.dto.login.LoginRequest;
+import model.dto.login.LoginResponse;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;

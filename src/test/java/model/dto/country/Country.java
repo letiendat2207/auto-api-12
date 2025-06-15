@@ -1,4 +1,4 @@
-package model.country;
+package model.dto.country;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

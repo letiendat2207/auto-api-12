@@ -2,9 +2,9 @@ package testCase.login;
 
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
-import model.login.LoginError;
-import model.login.LoginRequest;
-import model.login.LoginResponse;
+import model.dto.login.LoginError;
+import model.dto.login.LoginRequest;
+import model.dto.login.LoginResponse;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
