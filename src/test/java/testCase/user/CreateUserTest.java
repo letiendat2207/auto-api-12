@@ -31,7 +31,6 @@ import static utils.DbUtils.getUserFromDb;
 public class CreateUserTest extends TestMaster {
     private static final String[] IGNORE_FIELDS = {"id", "createdAt", "updatedAt", "addresses[*].id",
             "addresses[*].customerId", "addresses[*].createdAt", "addresses[*].updatedAt"};
-    private static final String EMAIL_TEMPlATE = "auto_api_%s@abc.com";
     private static List<String> ids = new ArrayList<>();
 
     @AfterAll
@@ -229,7 +228,7 @@ public class CreateUserTest extends TestMaster {
         }
     }
 
-    private static Response createUser(UserRequest userRequest) {
+    public static Response createUser(UserRequest userRequest) {
         return RestAssured.given().log().all()
                 .header(CONTENT_TYPE_HEADER, REQUEST_CONTENT_TYPE_HEADER_VALUE)
                 .header(AUTHORIZATION_HEADER, token)

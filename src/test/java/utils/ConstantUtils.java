@@ -17,6 +17,7 @@ public class ConstantUtils {
     public static final String CREATE_USER_API = "/api/user";
     public static final String GET_USER_API = "/api/user/{userId}";
     public static final String DELETE_USER_API = "/api/user/{userId}";
+    public static final String CREATE_CARD_API = "/api/card";
     public static final String CONTENT_TYPE_HEADER_VALUE = "application/json; charset=utf-8";
     public static final String API_KEY_HEADER = "api-key";
     public static final String API_KEY_HEADER_VALUE = "private";
@@ -25,4 +26,5 @@ public class ConstantUtils {
     public static final String PAGE = "page";
     public static final String SIZE = "size";
     public static final String AUTHORIZATION_HEADER = "Authorization";
+    public static final String EMAIL_TEMPlATE = "auto_api_%s@abc.com";
 }

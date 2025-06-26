@@ -4,6 +4,11 @@
       "request": {
         "method": "GET",
         "urlPath": "/get-card-info-by-type",
+        "headers": {
+          "api-key": {
+            "equalTo": "a-private-key"
+          }
+        },
         "queryParameters": {
           "type": {
             "equalTo": "SILVER"
