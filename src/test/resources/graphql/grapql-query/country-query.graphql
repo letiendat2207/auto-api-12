@@ -1,0 +1,42 @@
+query verifyCountry($code: ID!){
+    country(code: $code){
+        awsRegion
+        capital
+        code
+        continent{
+            code
+            countries {
+                code
+                name
+            }
+            name
+        }
+        currencies
+        currency
+        emoji
+        emojiU
+        languages{
+            code
+            name
+            native
+            rtl
+        }
+        name
+        native
+        phone
+        phones
+        states{
+            code
+            country {
+                code
+                name
+            }
+            name
+        }
+        subdivisions{
+            code
+            emoji
+            name
+        }
+    }
+}

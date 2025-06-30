@@ -1,0 +1,1041 @@
+{
+  "data": {
+    "country": {
+      "awsRegion": "ap-east-1",
+      "capital": "Hanoi",
+      "code": "VN",
+      "continent": {
+        "code": "AS",
+        "countries": [
+          {
+            "code": "AE",
+            "name": "United Arab Emirates"
+          },
+          {
+            "code": "AF",
+            "name": "Afghanistan"
+          },
+          {
+            "code": "AM",
+            "name": "Armenia"
+          },
+          {
+            "code": "AZ",
+            "name": "Azerbaijan"
+          },
+          {
+            "code": "BD",
+            "name": "Bangladesh"
+          },
+          {
+            "code": "BH",
+            "name": "Bahrain"
+          },
+          {
+            "code": "BN",
+            "name": "Brunei"
+          },
+          {
+            "code": "BT",
+            "name": "Bhutan"
+          },
+          {
+            "code": "CC",
+            "name": "Cocos [Keeling] Islands"
+          },
+          {
+            "code": "CN",
+            "name": "China"
+          },
+          {
+            "code": "CX",
+            "name": "Christmas Island"
+          },
+          {
+            "code": "GE",
+            "name": "Georgia"
+          },
+          {
+            "code": "HK",
+            "name": "Hong Kong"
+          },
+          {
+            "code": "ID",
+            "name": "Indonesia"
+          },
+          {
+            "code": "IL",
+            "name": "Israel"
+          },
+          {
+            "code": "IN",
+            "name": "India"
+          },
+          {
+            "code": "IO",
+            "name": "British Indian Ocean Territory"
+          },
+          {
+            "code": "IQ",
+            "name": "Iraq"
+          },
+          {
+            "code": "IR",
+            "name": "Iran"
+          },
+          {
+            "code": "JO",
+            "name": "Jordan"
+          },
+          {
+            "code": "JP",
+            "name": "Japan"
+          },
+          {
+            "code": "KG",
+            "name": "Kyrgyzstan"
+          },
+          {
+            "code": "KH",
+            "name": "Cambodia"
+          },
+          {
+            "code": "KP",
+            "name": "North Korea"
+          },
+          {
+            "code": "KR",
+            "name": "South Korea"
+          },
+          {
+            "code": "KW",
+            "name": "Kuwait"
+          },
+          {
+            "code": "KZ",
+            "name": "Kazakhstan"
+          },
+          {
+            "code": "LA",
+            "name": "Laos"
+          },
+          {
+            "code": "LB",
+            "name": "Lebanon"
+          },
+          {
+            "code": "LK",
+            "name": "Sri Lanka"
+          },
+          {
+            "code": "MM",
+            "name": "Myanmar [Burma]"
+          },
+          {
+            "code": "MN",
+            "name": "Mongolia"
+          },
+          {
+            "code": "MO",
+            "name": "Macao"
+          },
+          {
+            "code": "MV",
+            "name": "Maldives"
+          },
+          {
+            "code": "MY",
+            "name": "Malaysia"
+          },
+          {
+            "code": "NP",
+            "name": "Nepal"
+          },
+          {
+            "code": "OM",
+            "name": "Oman"
+          },
+          {
+            "code": "PH",
+            "name": "Philippines"
+          },
+          {
+            "code": "PK",
+            "name": "Pakistan"
+          },
+          {
+            "code": "PS",
+            "name": "Palestine"
+          },
+          {
+            "code": "QA",
+            "name": "Qatar"
+          },
+          {
+            "code": "SA",
+            "name": "Saudi Arabia"
+          },
+          {
+            "code": "SG",
+            "name": "Singapore"
+          },
+          {
+            "code": "SY",
+            "name": "Syria"
+          },
+          {
+            "code": "TH",
+            "name": "Thailand"
+          },
+          {
+            "code": "TJ",
+            "name": "Tajikistan"
+          },
+          {
+            "code": "TM",
+            "name": "Turkmenistan"
+          },
+          {
+            "code": "TR",
+            "name": "Turkey"
+          },
+          {
+            "code": "TW",
+            "name": "Taiwan"
+          },
+          {
+            "code": "UZ",
+            "name": "Uzbekistan"
+          },
+          {
+            "code": "VN",
+            "name": "Vietnam"
+          },
+          {
+            "code": "YE",
+            "name": "Yemen"
+          }
+        ],
+        "name": "Asia"
+      },
+      "currencies": [
+        "VND"
+      ],
+      "currency": "VND",
+      "emoji": "🇻🇳",
+      "emojiU": "U+1F1FB U+1F1F3",
+      "languages": [
+        {
+          "code": "vi",
+          "name": "Vietnamese",
+          "native": "Tiếng Việt",
+          "rtl": false
+        }
+      ],
+      "name": "Vietnam",
+      "native": "Việt Nam",
+      "phone": "84",
+      "phones": [
+        "84"
+      ],
+      "states": [
+        {
+          "code": null,
+          "country": {
+            "code": "VN",
+            "name": "Vietnam"
+          },
+          "name": "Hà Nội"
+        },
+        {
+          "code": null,
+          "country": {
+            "code": "VN",
+            "name": "Vietnam"
+          },
+          "name": "Hà Giang"
+        },
+        {
+          "code": null,
+          "country": {
+            "code": "VN",
+            "name": "Vietnam"
+          },
+          "name": "Cao Bằng"
+        },
+        {
+          "code": null,
+          "country": {
+            "code": "VN",
+            "name": "Vietnam"
+          },
+          "name": "Bắc Kạn"
+        },
+        {
+          "code": null,
+          "country": {
+            "code": "VN",
+            "name": "Vietnam"
+          },
+          "name": "Tuyên Quang"
+        },
+        {
+          "code": null,
+          "country": {
+            "code": "VN",
+            "name": "Vietnam"
+          },
+          "name": "Lào Cai"
+        },
+        {
+          "code": null,
+          "country": {
+            "code": "VN",
+            "name": "Vietnam"
+          },
+          "name": "Điện Biên"
+        },
+        {
+          "code": null,
+          "country": {
+            "code": "VN",
+            "name": "Vietnam"
+          },
+          "name": "Lai Châu"
+        },
+        {
+          "code": null,
+          "country": {
+            "code": "VN",
+            "name": "Vietnam"
+          },
+          "name": "Sơn La"
+        },
+        {
+          "code": null,
+          "country": {
+            "code": "VN",
+            "name": "Vietnam"
+          },
+          "name": "Yên Bái"
+        },
+        {
+          "code": null,
+          "country": {
+            "code": "VN",
+            "name": "Vietnam"
+          },
+          "name": "Hòa Bình"
+        },
+        {
+          "code": null,
+          "country": {
+            "code": "VN",
+            "name": "Vietnam"
+          },
+          "name": "Thái Nguyên"
+        },
+        {
+          "code": null,
+          "country": {
+            "code": "VN",
+            "name": "Vietnam"
+          },
+          "name": "Lạng Sơn"
+        },
+        {
+          "code": null,
+          "country": {
+            "code": "VN",
+            "name": "Vietnam"
+          },
+          "name": "Quảng Ninh"
+        },
+        {
+          "code": null,
+          "country": {
+            "code": "VN",
+            "name": "Vietnam"
+          },
+          "name": "Bắc Giang"
+        },
+        {
+          "code": null,
+          "country": {
+            "code": "VN",
+            "name": "Vietnam"
+          },
+          "name": "Phú Thọ"
+        },
+        {
+          "code": null,
+          "country": {
+            "code": "VN",
+            "name": "Vietnam"
+          },
+          "name": "Vĩnh Phúc"
+        },
+        {
+          "code": null,
+          "country": {
+            "code": "VN",
+            "name": "Vietnam"
+          },
+          "name": "Bắc Ninh"
+        },
+        {
+          "code": null,
+          "country": {
+            "code": "VN",
+            "name": "Vietnam"
+          },
+          "name": "Hải Dương"
+        },
+        {
+          "code": null,
+          "country": {
+            "code": "VN",
+            "name": "Vietnam"
+          },
+          "name": "Hải Phòng"
+        },
+        {
+          "code": null,
+          "country": {
+            "code": "VN",
+            "name": "Vietnam"
+          },
+          "name": "Hưng Yên"
+        },
+        {
+          "code": null,
+          "country": {
+            "code": "VN",
+            "name": "Vietnam"
+          },
+          "name": "Thái Bình"
+        },
+        {
+          "code": null,
+          "country": {
+            "code": "VN",
+            "name": "Vietnam"
+          },
+          "name": "Hà Nam"
+        },
+        {
+          "code": null,
+          "country": {
+            "code": "VN",
+            "name": "Vietnam"
+          },
+          "name": "Nam Định"
+        },
+        {
+          "code": null,
+          "country": {
+            "code": "VN",
+            "name": "Vietnam"
+          },
+          "name": "Ninh Bình"
+        },
+        {
+          "code": null,
+          "country": {
+            "code": "VN",
+            "name": "Vietnam"
+          },
+          "name": "Thanh Hóa"
+        },
+        {
+          "code": null,
+          "country": {
+            "code": "VN",
+            "name": "Vietnam"
+          },
+          "name": "Nghệ An"
+        },
+        {
+          "code": null,
+          "country": {
+            "code": "VN",
+            "name": "Vietnam"
+          },
+          "name": "Hà Tĩnh"
+        },
+        {
+          "code": null,
+          "country": {
+            "code": "VN",
+            "name": "Vietnam"
+          },
+          "name": "Quảng Bình"
+        },
+        {
+          "code": null,
+          "country": {
+            "code": "VN",
+            "name": "Vietnam"
+          },
+          "name": "Quảng Trị"
+        },
+        {
+          "code": null,
+          "country": {
+            "code": "VN",
+            "name": "Vietnam"
+          },
+          "name": "Thừa Thiên–Huế"
+        },
+        {
+          "code": null,
+          "country": {
+            "code": "VN",
+            "name": "Vietnam"
+          },
+          "name": "Đà Nẵng"
+        },
+        {
+          "code": null,
+          "country": {
+            "code": "VN",
+            "name": "Vietnam"
+          },
+          "name": "Quảng Nam"
+        },
+        {
+          "code": null,
+          "country": {
+            "code": "VN",
+            "name": "Vietnam"
+          },
+          "name": "Quảng Ngãi"
+        },
+        {
+          "code": null,
+          "country": {
+            "code": "VN",
+            "name": "Vietnam"
+          },
+          "name": "Bình Định"
+        },
+        {
+          "code": null,
+          "country": {
+            "code": "VN",
+            "name": "Vietnam"
+          },
+          "name": "Phú Yên"
+        },
+        {
+          "code": null,
+          "country": {
+            "code": "VN",
+            "name": "Vietnam"
+          },
+          "name": "Khánh Hòa"
+        },
+        {
+          "code": null,
+          "country": {
+            "code": "VN",
+            "name": "Vietnam"
+          },
+          "name": "Ninh Thuận"
+        },
+        {
+          "code": null,
+          "country": {
+            "code": "VN",
+            "name": "Vietnam"
+          },
+          "name": "Bình Thuận"
+        },
+        {
+          "code": null,
+          "country": {
+            "code": "VN",
+            "name": "Vietnam"
+          },
+          "name": "Kon Tum"
+        },
+        {
+          "code": null,
+          "country": {
+            "code": "VN",
+            "name": "Vietnam"
+          },
+          "name": "Gia Lai"
+        },
+        {
+          "code": null,
+          "country": {
+            "code": "VN",
+            "name": "Vietnam"
+          },
+          "name": "Đắk Lắk"
+        },
+        {
+          "code": null,
+          "country": {
+            "code": "VN",
+            "name": "Vietnam"
+          },
+          "name": "Đắk Nông"
+        },
+        {
+          "code": null,
+          "country": {
+            "code": "VN",
+            "name": "Vietnam"
+          },
+          "name": "Lâm Đồng"
+        },
+        {
+          "code": null,
+          "country": {
+            "code": "VN",
+            "name": "Vietnam"
+          },
+          "name": "Bình Phước"
+        },
+        {
+          "code": null,
+          "country": {
+            "code": "VN",
+            "name": "Vietnam"
+          },
+          "name": "Tây Ninh"
+        },
+        {
+          "code": null,
+          "country": {
+            "code": "VN",
+            "name": "Vietnam"
+          },
+          "name": "Bình Dương"
+        },
+        {
+          "code": null,
+          "country": {
+            "code": "VN",
+            "name": "Vietnam"
+          },
+          "name": "Đồng Nai"
+        },
+        {
+          "code": null,
+          "country": {
+            "code": "VN",
+            "name": "Vietnam"
+          },
+          "name": "Bà Rịa–Vũng Tàu"
+        },
+        {
+          "code": null,
+          "country": {
+            "code": "VN",
+            "name": "Vietnam"
+          },
+          "name": "Thành phố Hồ Chí Minh"
+        },
+        {
+          "code": null,
+          "country": {
+            "code": "VN",
+            "name": "Vietnam"
+          },
+          "name": "Long An"
+        },
+        {
+          "code": null,
+          "country": {
+            "code": "VN",
+            "name": "Vietnam"
+          },
+          "name": "Tiền Giang"
+        },
+        {
+          "code": null,
+          "country": {
+            "code": "VN",
+            "name": "Vietnam"
+          },
+          "name": "Bến Tre"
+        },
+        {
+          "code": null,
+          "country": {
+            "code": "VN",
+            "name": "Vietnam"
+          },
+          "name": "Trà Vinh"
+        },
+        {
+          "code": null,
+          "country": {
+            "code": "VN",
+            "name": "Vietnam"
+          },
+          "name": "Vĩnh Long"
+        },
+        {
+          "code": null,
+          "country": {
+            "code": "VN",
+            "name": "Vietnam"
+          },
+          "name": "Đồng Tháp"
+        },
+        {
+          "code": null,
+          "country": {
+            "code": "VN",
+            "name": "Vietnam"
+          },
+          "name": "An Giang"
+        },
+        {
+          "code": null,
+          "country": {
+            "code": "VN",
+            "name": "Vietnam"
+          },
+          "name": "Kiên Giang"
+        },
+        {
+          "code": null,
+          "country": {
+            "code": "VN",
+            "name": "Vietnam"
+          },
+          "name": "Cần Thơ"
+        },
+        {
+          "code": null,
+          "country": {
+            "code": "VN",
+            "name": "Vietnam"
+          },
+          "name": "Hậu Giang"
+        },
+        {
+          "code": null,
+          "country": {
+            "code": "VN",
+            "name": "Vietnam"
+          },
+          "name": "Sóc Trăng"
+        },
+        {
+          "code": null,
+          "country": {
+            "code": "VN",
+            "name": "Vietnam"
+          },
+          "name": "Bạc Liêu"
+        },
+        {
+          "code": null,
+          "country": {
+            "code": "VN",
+            "name": "Vietnam"
+          },
+          "name": "Cà Mau"
+        }
+      ],
+      "subdivisions": [
+        {
+          "code": "VN-28",
+          "emoji": null,
+          "name": "Kon Tum"
+        },
+        {
+          "code": "VN-29",
+          "emoji": null,
+          "name": "Quảng Ngãi"
+        },
+        {
+          "code": "VN-26",
+          "emoji": null,
+          "name": "Thừa Thiên-Huế"
+        },
+        {
+          "code": "VN-27",
+          "emoji": null,
+          "name": "Quảng Nam"
+        },
+        {
+          "code": "VN-24",
+          "emoji": null,
+          "name": "Quảng Bình"
+        },
+        {
+          "code": "VN-25",
+          "emoji": null,
+          "name": "Quảng Trị"
+        },
+        {
+          "code": "VN-22",
+          "emoji": null,
+          "name": "Nghệ An"
+        },
+        {
+          "code": "VN-23",
+          "emoji": null,
+          "name": "Hà Tĩnh"
+        },
+        {
+          "code": "VN-20",
+          "emoji": null,
+          "name": "Thái Bình"
+        },
+        {
+          "code": "VN-21",
+          "emoji": null,
+          "name": "Thanh Hóa"
+        },
+        {
+          "code": "VN-72",
+          "emoji": null,
+          "name": "Đắk Nông"
+        },
+        {
+          "code": "VN-70",
+          "emoji": null,
+          "name": "Vĩnh Phúc"
+        },
+        {
+          "code": "VN-67",
+          "emoji": null,
+          "name": "Nam Ðịnh"
+        },
+        {
+          "code": "VN-49",
+          "emoji": null,
+          "name": "Vĩnh Long"
+        },
+        {
+          "code": "VN-63",
+          "emoji": null,
+          "name": "Hà Nam"
+        },
+        {
+          "code": "VN-71",
+          "emoji": null,
+          "name": "Điện Biên"
+        },
+        {
+          "code": "VN-35",
+          "emoji": null,
+          "name": "Lâm Ðồng"
+        },
+        {
+          "code": "VN-73",
+          "emoji": null,
+          "name": "Hậu Giang"
+        },
+        {
+          "code": "VN-61",
+          "emoji": null,
+          "name": "Hải Dương"
+        },
+        {
+          "code": "VN-59",
+          "emoji": null,
+          "name": "Cà Mau"
+        },
+        {
+          "code": "VN-58",
+          "emoji": null,
+          "name": "Bình Phước"
+        },
+        {
+          "code": "VN-57",
+          "emoji": null,
+          "name": "Bình Dương"
+        },
+        {
+          "code": "VN-56",
+          "emoji": null,
+          "name": "Bắc Ninh"
+        },
+        {
+          "code": "VN-55",
+          "emoji": null,
+          "name": "Bạc Liêu"
+        },
+        {
+          "code": "VN-54",
+          "emoji": null,
+          "name": "Bắc Giang"
+        },
+        {
+          "code": "VN-53",
+          "emoji": null,
+          "name": "Bắc Kạn"
+        },
+        {
+          "code": "VN-52",
+          "emoji": null,
+          "name": "Sóc Trăng"
+        },
+        {
+          "code": "VN-51",
+          "emoji": null,
+          "name": "Trà Vinh"
+        },
+        {
+          "code": "VN-50",
+          "emoji": null,
+          "name": "Bến Tre"
+        },
+        {
+          "code": "VN-18",
+          "emoji": null,
+          "name": "Ninh Bình"
+        },
+        {
+          "code": "VN-39",
+          "emoji": null,
+          "name": "Ðồng Nai"
+        },
+        {
+          "code": "VN-13",
+          "emoji": null,
+          "name": "Quảng Ninh"
+        },
+        {
+          "code": "VN-34",
+          "emoji": null,
+          "name": "Khánh Hòa"
+        },
+        {
+          "code": "VN-37",
+          "emoji": null,
+          "name": "Tây Ninh"
+        },
+        {
+          "code": "VN-36",
+          "emoji": null,
+          "name": "Ninh Thuận"
+        },
+        {
+          "code": "VN-31",
+          "emoji": null,
+          "name": "Bình Định"
+        },
+        {
+          "code": "VN-30",
+          "emoji": null,
+          "name": "Gia Lai"
+        },
+        {
+          "code": "VN-33",
+          "emoji": null,
+          "name": "Đắk Lắk"
+        },
+        {
+          "code": "VN-14",
+          "emoji": null,
+          "name": "Hòa Bình"
+        },
+        {
+          "code": "VN-32",
+          "emoji": null,
+          "name": "Phú Yên"
+        },
+        {
+          "code": "VN-69",
+          "emoji": null,
+          "name": "Thái Nguyên"
+        },
+        {
+          "code": "VN-45",
+          "emoji": null,
+          "name": "Ðồng Tháp"
+        },
+        {
+          "code": "VN-04",
+          "emoji": null,
+          "name": "Cao Bằng"
+        },
+        {
+          "code": "VN-05",
+          "emoji": null,
+          "name": "Sơn La"
+        },
+        {
+          "code": "VN-06",
+          "emoji": null,
+          "name": "Yên Bái"
+        },
+        {
+          "code": "VN-07",
+          "emoji": null,
+          "name": "Tuyên Quang"
+        },
+        {
+          "code": "VN-66",
+          "emoji": null,
+          "name": "Hưng Yên"
+        },
+        {
+          "code": "VN-01",
+          "emoji": null,
+          "name": "Lai Châu"
+        },
+        {
+          "code": "VN-02",
+          "emoji": null,
+          "name": "Lào Cai"
+        },
+        {
+          "code": "VN-03",
+          "emoji": null,
+          "name": "Hà Giang"
+        },
+        {
+          "code": "VN-40",
+          "emoji": null,
+          "name": "Bình Thuận"
+        },
+        {
+          "code": "VN-41",
+          "emoji": null,
+          "name": "Long An"
+        },
+        {
+          "code": "VN-68",
+          "emoji": null,
+          "name": "Phú Thọ"
+        },
+        {
+          "code": "VN-43",
+          "emoji": null,
+          "name": "Bà Rịa - Vũng Tàu"
+        },
+        {
+          "code": "VN-44",
+          "emoji": null,
+          "name": "An Giang"
+        },
+        {
+          "code": "VN-09",
+          "emoji": null,
+          "name": "Lạng Sơn"
+        },
+        {
+          "code": "VN-46",
+          "emoji": null,
+          "name": "Tiền Giang"
+        },
+        {
+          "code": "VN-47",
+          "emoji": null,
+          "name": "Kiến Giang"
+        }
+      ]
+    }
+  }
+}
